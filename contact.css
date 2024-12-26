@@ -3,7 +3,8 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     padding-bottom: 100px;
-    
+    width: 100%;
+    height: auto;
 }
 
 #contact {
@@ -97,6 +98,7 @@ textarea {
 .list-item {
     line-height: 4;
     color: #202020;
+    font: 1rem;
 }
 
 .contact-text {
@@ -104,7 +106,6 @@ textarea {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
     letter-spacing: 1.9px;
 }
 
@@ -113,6 +114,12 @@ textarea {
     font-weight: 400;
     font-style: normal;
 
+}
+
+.phone{
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .contact-text a {
@@ -239,7 +246,6 @@ hr {
         margin: 0 auto;
     }
 
-
     .name,
     .email,
     textarea {
@@ -272,6 +278,6 @@ hr {
 
 @media screen and (max-width: 410px) {
     .send-button {
-        width: 99%;
+        width: 100%;
     }
 }
