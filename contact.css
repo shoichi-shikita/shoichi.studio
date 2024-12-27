@@ -7,6 +7,27 @@ body {
     height: auto;
 }
 
+.bg-image {
+    background: no-repeat center url(./image/background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.bg-image::before{
+    content: '';
+    position: fixed; /* 背景を固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat url(./image/background.png);
+    background-size: cover; /* 背景画像を画面に合わせる */
+    background-attachment: fixed;
+    z-index: -1; /* 背景として扱う */
+    filter: blur(8px); /* ぼかしの強さを調整 */
+}
+
 #contact {
     width: 100%;
     height: 100%;
