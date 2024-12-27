@@ -1,0 +1,270 @@
+/* グローバルスタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f0f0f0;
+}
+
+/* ローディング画面 */
+#loading-screen {
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 1s ease, visibility 0s 1s;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.text-svg {
+    width: 500px;
+    height: 100px;
+}
+
+.loading-text {
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    fill: none;
+    stroke: #202020;
+    stroke-width: 2;
+    font-size: 4rem;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawText 3s linear forwards;
+}
+
+@keyframes drawText {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ナビゲーションバー */
+nav {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    /* ローディング画面より下に配置 */
+    opacity: 0;
+    /* 初期状態で非表示 */
+    visibility: hidden;
+    /* 見えない状態にする */
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+    /* スムーズに表示 */
+}
+
+/* ローディング画面が消えた後にナビゲーションを表示 */
+nav.show {
+    opacity: 1;
+    /* 表示 */
+    visibility: visible;
+    /* 見える状態に切り替え */
+    transition: opacity 0.5s ease;
+    /* スムーズなフェードイン */
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .gallery-images {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .gallery p {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .gallery p:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery p img {
+        border: solid 3px #202020;
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* ヒーローセクション */
+.hero {
+    height: 100vh;
+    background: url('https://placekitten.com/1920/1080') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #202020;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #202020;
+    margin-top: 20px;
+}
+
+/* ギャラリー */
+.gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.gallery-images {
+    display: flex;
+    align-items: center;
+}
+
+.gallery p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    align-items: center;
+    font-size: 25px;
+}
+
+.gallery p:hover {
+    transform: scale(1.05);
+}
+
+.gallery p img {
+    border: solid 3px #202020;
+    width: 80%;
+    height: auto;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 24px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
