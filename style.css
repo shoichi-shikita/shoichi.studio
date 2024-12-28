@@ -75,7 +75,7 @@ body {
     background-size: cover; /* 背景画像を画面に合わせる */
     background-attachment: fixed;
     z-index: -1; /* 背景として扱う */
-    filter: blur(8px); /* ぼかしの強さを調整 */
+    filter: blur(4px); /* ぼかしの強さを調整 */
 }
 
 /* ナビゲーションバー */
@@ -160,7 +160,7 @@ nav.show {
         text-align: center;
     }
 
-    .menu-toggle {
+    .menu-toggle{
         display: block;
     }
 
@@ -216,7 +216,7 @@ nav.show {
         bottom: 0;
         left: 0;
         z-index: 2;
-        width: 19%;
+        width: 40%;
         padding: 10px 10px 110px;
         color: #000;
         font-size: 14px;
