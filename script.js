@@ -11,7 +11,13 @@ window.addEventListener('load', () => {
 });
 
 
-// ハンバーガーメニューの動作
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.menu').classList.toggle('active');
+$(document).ready(function() {
+    // メニューのトグル機能
+    $('.menu-toggle').click(function() {
+        // メニューの表示/非表示をスライドイン・スライドアウトで切り替え
+        $('.menu').stop(true, true).slideToggle(500);
+        
+        // ハンバーガーアイコンのアニメーション
+        $(this).toggleClass('open');
+    });
 });
