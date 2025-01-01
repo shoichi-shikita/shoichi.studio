@@ -1,3 +1,4 @@
 {
-    "files.defaultLanguage": ""
+    "files.defaultLanguage": "",
+    "terminal.integrated.defaultProfile.osx": "zsh"
 }
